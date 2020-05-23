@@ -1,0 +1,29 @@
+html,
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+.logo {
+    width: 20vw;
+}
+
+.ajuste_row_logo {
+    margin: 0px !important;
+}
+
+.image_index {
+    width: 100vw;
+}
+
+.ajuste_imagen_index {
+    padding: 0px !important;
+}
+
+.ajuste_video {
+    margin-bottom: 5px;
+}
+
+.contenedor_video {
+    padding: 0 20px 0 20px !important;
+}
