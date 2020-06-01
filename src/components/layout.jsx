@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
     <>
       <MDBContainer fluid className="container-global">
         <Header />
-          <main>{children}</main>
+          <main className="layout-padding">{children}</main>
         <Footer />
       </MDBContainer>
     </>

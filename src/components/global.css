@@ -16,3 +16,21 @@ body {
 .logo {
     width: 20vw;
 }
+
+.imagen-fondo {
+    background-image: url(https://images.unsplash.com/photo-1581404917879-53e19259fdda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80);
+    background-attachment: local;
+    background-position: 50% 20%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 70vw;
+}
+
+
+/* .rounded {
+    border-radius: 25px !important;
+} */
+
+.margen-negativo {
+    margin-top: -24px;
+}

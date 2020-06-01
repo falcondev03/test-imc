@@ -10,7 +10,7 @@ const Header = () => {
   const [menu, setMenu] = useState(false)
   
   return(
-    // <header>
+    <header style={{height: "5% !important"}}>
         <MDBNavbar color="grey lighten-3" light className="ajuste_nav">
             <MDBNavbarBrand>
               <Link to="/">
@@ -38,7 +38,7 @@ const Header = () => {
               </MDBNavbarNav>
             </MDBCollapse>             
         </MDBNavbar>
-    // </header>
+    </header>
   )
 }
 

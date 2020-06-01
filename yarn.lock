@@ -6109,6 +6109,14 @@ gatsby-telemetry@^1.3.5:
     stack-utils "1.0.2"
     uuid "3.4.0"
 
+gatsby-transformer-ffmpeg@^0.3.8:
+  version "0.3.8"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-ffmpeg/-/gatsby-transformer-ffmpeg-0.3.8.tgz#9ae000d13f5899e0712e43343cec305282d752b8"
+  integrity sha512-pdKQSRxatY+9frUSLSa9AlTu7JO815XAXToU1Ph+FnGqUGwT4Exw8Y2NP7oKgku9hZXmFVB/Wzs5QPyfbC8tdw==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    bluebird "^3.5.5"
+
 gatsby-transformer-sharp@^2.5.2:
   version "2.5.2"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.5.2.tgz#0ae4bb4fb26061747b4b8c8356f2cd88fbddad18"
@@ -6121,6 +6129,15 @@ gatsby-transformer-sharp@^2.5.2:
     probe-image-size "^4.1.1"
     semver "^5.7.1"
     sharp "^0.25.1"
+
+gatsby-video@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/gatsby-video/-/gatsby-video-0.2.0.tgz#52fa69bd6076d90191c62208d0b09c1f61ccbf3b"
+  integrity sha512-h+4p6T9bM5m8pn1Bf5OuOfhV6ryhBsFc+MaESOZKB/Jfl7KdIyAVK6ufwq7LLtRpkHJEFE1vQKyHXvBainHScw==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    bluebird "^3.5.5"
+    react ">=16.0.0"
 
 gatsby@^2.21.37:
   version "2.21.37"
@@ -11093,7 +11110,7 @@ react-transition-group@^4:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react@^16.12.0, react@^16.8.0:
+react@>=16.0.0, react@^16.12.0, react@^16.8.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
   integrity sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w==
