@@ -45,8 +45,25 @@ const Test = () => {
                  <Stepper step={ step }/>
             </div> 
             <MDBContainer>
+                {  step == 1 && <Form title="" typeInput="" configs={[]} /> } 
+                {  step == 2 && <Form title="" typeInput="" configs={[]} /> } 
+                {  step == 3 && <Form title="" typeInput="" configs={[]} /> } 
+                {  step == 4 && <Form title="" typeInput="" configs={[]} /> } 
+                {  step == 5 && <Form title="" typeInput="" configs={[]} /> } 
+                {  step == 6 && <Form title="" typeInput="" configs={[]} /> } 
+                {  step == 7 && <Form title="" typeInput="" configs={[]} /> } 
+                {  step == 8 && <Form title="" typeInput="" configs={[]} /> } 
+                {  step == 9 && <Form title="" typeInput="" configs={[]} /> } 
+                {  step == 10 && <Form title="" typeInput="" configs={[]} /> } 
+                {  step == 11 && <Form title="" typeInput="" configs={[]} /> } 
+                {  step == 12 && <Form title="" typeInput="" configs={[]} /> } 
+                {  step == 13 && <Form title="" typeInput="" configs={[]} /> } 
+                {  step == 14 && <Form title="" typeInput="" configs={[]} /> } 
+                {  step == 15 && <Form title="" typeInput="" configs={[]} /> } 
+                {  step == 16 && <Form title="" typeInput="" configs={[]} /> } 
+                {  step == 17 && <Form title="" typeInput="" configs={[]} /> } 
+
                 <ButtonsStepper updateStep={ updateStep } step={ step }/>
-                <Form />
             </MDBContainer>
         </>
     )
