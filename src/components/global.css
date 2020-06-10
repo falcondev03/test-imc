@@ -34,3 +34,7 @@ body {
 .margen-negativo {
     margin-top: -24px;
 }
+.barra-test{
+    border-radius: 1rem;
+    height: 0.8rem;
+}
