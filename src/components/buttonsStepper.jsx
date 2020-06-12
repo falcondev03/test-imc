@@ -5,7 +5,7 @@ import { MDBBtn } from "mdbreact"
 const ButtonsStepper = ({ updateStep, step }) => {
 
     const handlerButtonNext = () => {
-        if(step !== 30) updateStep(step + 1)
+        if(step !== 17) updateStep(step + 1)
     }
 
     const handlerButtonBack = () => {
@@ -14,8 +14,8 @@ const ButtonsStepper = ({ updateStep, step }) => {
 
     return (
         <Fragment>
-            <MDBBtn onClick={ handlerButtonBack }>Atras</MDBBtn>
-            <MDBBtn onClick={ handlerButtonNext } gradient="purple">Continuar</MDBBtn>
+            { step != 0 && <MDBBtn onClick={ handlerButtonBack } outline className="rounded-pill">Atras</MDBBtn>}
+            <MDBBtn onClick={ handlerButtonNext } className="rounded-pill" gradient="purple">Adelante</MDBBtn>
         </Fragment>
     )
 
