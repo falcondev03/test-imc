@@ -11,26 +11,31 @@ import {FormInputs, FormContainer}  from "./form"
 const Test = () => {
     const [step, setStep] = useState(0)
     const preguntas = [
-        "Cual es el Peso Ideal al que quieres llegar?",
-        "Cual es tu altura y peso?",
-        "Cual es tu Sexo?",
-        "Cual es tu edad?",
-        "Sufre de alguna de estas patologias?",
-        "Mi Ritmo de Vida es:",
-        "Yo Como...",
-        "Mi Estilo de Vida es..",
-        "Salgo a Comer Fuera...",
-        "El tiempo que tengo para cocinar es...",
-        "Lo que mas me gusta comer es...",
-        "Suelo beber con las comidas...",
-        "Yo soy de...",
-        "Mi vida diaria es...",
-        "Mi actividad fisica es...",
-        "Objetivos",
-        "La ultima vez que intente adelgazar fue...",
-        "Me gustaria...",
+        "¿Cual es el Peso Ideal al que quieres llegar?",
+        "¿Cual es tu altura y peso?",
+        "¿Cual es tu Sexo?",
+        "¿Cual es tu edad?",
+        "¿Sufre de alguna de estas patologias?",
+        "¿Mi Ritmo de Vida es:",
+        "¿Yo Como...",
+        "¿Mi Estilo de Vida es..",
+        "¿Salgo a Comer Fuera...",
+        "¿El tiempo que tengo para cocinar es...",
+        "¿Lo que mas me gusta comer es...",
+        "¿Suelo beber con las comidas...",
+        "¿Yo soy de...",
+        "¿Mi vida diaria es...",
+        "¿Mi actividad fisica es...",
+        "¿Objetivos",
+        "¿La ultima vez que intente adelgazar fue...",
+        "¿Me gustaria...",
+        "Ingresa tu correo electrónico para que te podamos enviar un informe completo:"
 
     ] 
+    const fields = 
+        [
+            ["diabetes","tensionArterial","problemasCardiacos","problemasEndocrinos","problemasRenales","problemasHormonales"]
+        ]
     const updateStep = stepper => {
         setStep(stepper)
     }
@@ -55,11 +60,11 @@ const Test = () => {
                         edad:"",
                         patologias:{
                             diabetes:false,
-                            tension_arterial:false,
-                            problemas_cardiacos:false,
-                            problemas_endocrinos:false,
-                            problemas_renales:false,
-                            problemas_hormonales:false
+                            tensionArterial:false,
+                            problemasCardiacos:false,
+                            problemasEndocrinos:false,
+                            problemasRenales:false,
+                            problemasHormonales:false
                         },
                         ritmoVida:"",
                         dieta:"",
@@ -75,15 +80,15 @@ const Test = () => {
                             quiero_cambiar_mi_estilo_de_vida_por_completo:false,
                             solo_quiero_adelgazar_y_quedarme_en_mi_peso_lo_antes_posible:false,
                             quiero_adelgazar_pero_no_tengo_prisa:false,
-                            quiero_mejorar_algunos_de_mis_hábitos:false
+                            quiero_mejorar_algunos_de_mis_habitos:false
                         },
                         ultimaVezQueintenteAdelgazar:"",
                         meGustaria:{
                             que_me_dieran_el_máximo_apoyo_necesito_que_me_motiven:false,
                             mentalizarme_necesito_que_me_ayuden_con_eso:false,
                             se_lo_que_quiero_empecemos_ya:false,
-                            adelgazar_hacer_ejercicio_y_conocer_mas_personas_en_mi_situación:false,
-                            atención_personalizada_integral_con_un_coach_nutricional:false
+                            adelgazar_hacer_ejercicio_y_conocer_mas_personas_en_mi_situacion:false,
+                            atencion_personalizada_integral_con_un_coach_nutricional:false
                         },
                         email:"",
                     }}>
@@ -105,31 +110,50 @@ const Test = () => {
                             )} 
 
                             {  step == 4 && 
-                                ["diabetes",
-                                "tension arterial",
-                                "problemas cardiacos",
-                                "problemas endocrinos",
-                                "problemas renales",
-                                "problemas hormonales"]
+                                ["Diabetes",
+                                "Tension arterial",
+                                "Problemas cardiacos",
+                                "Problemas endocrinos",
+                                "Problemas renales",
+                                "Problemas hormonales"]
                                 .map((label, key)=> 
                                     <FormInputs
                                         key={ key }
                                         label={ label }
                                         type="checkbox"
-                                        name={ `patologias.${label}` }
+                                        name={ `patologias.${fields[0][key]}` }
                                         id={`patologias${key}`}
                                     />
                             )}
 
                             {  step == 5 && 
-                                ["desenfrenado y estresante","relativamente tranquilo", "muy tranquilo"].map((label, key) =>
-                                <FormInputs type="radio" key={key} name="ritmoVida" label={ label } value={ label } id={`vida${key}`}/>
+                                ["desenfrenado y estresante",
+                                "relativamente tranquilo",
+                                "muy tranquilo"]
+                                .map((label, key) =>
+                                <FormInputs
+                                    type="radio"
+                                    key={key}
+                                    name="ritmoVida"
+                                    label={ label }
+                                    value={ label }
+                                    id={`vida${key}`}
+                                />
                             )} 
 
                             {  step == 6 &&
-                                ["3 veces al dia","5 veces al dia y con 3 horas de diferencia entre comidas", "por impulsos"]
+                                ["3 veces al dia",
+                                "5 veces al dia y con 3 horas de diferencia entre comidas",
+                                "por impulsos"]
                                 .map((label, key) =>
-                                <FormInputs type="radio" key={key} name="dieta" label={ label } value={ label } id={`dieta${key}`} />
+                                    <FormInputs
+                                        type="radio"
+                                        key={key}
+                                        name="dieta"
+                                        label={ label }
+                                        value={ label }
+                                        id={`dieta${key}`}
+                                    />
                             )} 
 
                             {  step == 7 && 
@@ -272,8 +296,16 @@ const Test = () => {
                                     label={ label }
                                     id={`meGustaria${key}`} 
                                 />
-                            )}
-                        </FormContainer>
+                             )}
+                            { step === 18 && 
+                                    <FormInputs 
+                                        type="text"
+                                        name="email"
+                                        label="Email:"
+                                        id="email"
+                                    />
+                            }
+                                </FormContainer>
                         <Row center>
                             <ButtonsStepper updateStep={ updateStep } step={ step }/>
                         </Row>

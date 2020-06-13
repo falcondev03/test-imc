@@ -6,7 +6,7 @@ const Stepper = ({ step }) => {
 
     return(
         <Fragment>
-            <MDBProgress color="success" gadient="" className="barra-test" value={ step } max={17} material/>
+            <MDBProgress color="success" gadient="" className="barra-test" value={ step } max={18} material/>
         </Fragment>
 
     )

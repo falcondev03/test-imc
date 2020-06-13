@@ -5,7 +5,7 @@ import { MDBBtn } from "mdbreact"
 const ButtonsStepper = ({ updateStep, step }) => {
 
     const handlerButtonNext = () => {
-        if(step !== 17) updateStep(step + 1)
+        if(step !== 18) updateStep(step + 1)
     }
 
     const handlerButtonBack = () => {

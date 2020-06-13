@@ -18,7 +18,7 @@ const IndexPage = () => (
       </MDBBox>
     <MDBBox display="flex" flex="column" pl="2" pr="2" className="imagen-fondo">
       <MDBBtn gradient="purple" className="rounded-pill margen-negativo">
-        <Link to="/test" className="text-light">
+        <Link to="/app/" className="text-white">
           Obtener mi Plan Personalizado
         </Link>
       </MDBBtn>
