@@ -37,7 +37,8 @@ const Footer = () => {
                 </MDBContainer>
                 <div className="footer-copyright text-center py-3 text-dark">
                     <MDBContainer fluid>
-                        Desarrollado por: <b>falcondev03</b>
+                        Desarrollado por: <b>resagar</b>
+                        Github: @resagar
                     </MDBContainer>
                 </div>
             </MDBFooter>

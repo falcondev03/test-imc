@@ -21,8 +21,8 @@ module.exports = {
                 name: `OhStyle.me`,
                 short_name: `ohstyle`,
                 start_url: `/`,
-                background_color: `gradient(40deg,#ff6ec4,#7873f5)`,
-                theme_color: `gradient(40deg,#ff6ec4,#7873f5)`,
+                background_color: ``,
+                theme_color: ``,
                 display: `minimal-ui`,
                 icon: `${__dirname}/src/assets/images/logo.png`, // This path is relative to the root of the site.
             },

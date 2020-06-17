@@ -1,12 +1,12 @@
 import React from "react"
 import { Router } from "@reach/router"
-import Test from "../components/test"
+import Imc from "../components/imc"
 
 const App = () => {
     return(
         <>
             <Router>
-                <Test path="/app/"/>
+                <Imc path="/app/"/>
             </Router>
         </>
     )

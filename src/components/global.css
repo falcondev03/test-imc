@@ -42,3 +42,7 @@ body {
 label::first-letter {
     text-transform: capitalize;
 }
+
+.text-line{
+    text-decoration: underline;
+}

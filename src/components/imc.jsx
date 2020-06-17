@@ -1,35 +1,34 @@
+// import axios from "axios"
+import { Form, Formik } from "formik"
+import { MDBContainer as Container, MDBRow as Row, MDBFooter as Footer } from 'mdbreact'
 import React, { useState } from 'react'
-import { MDBContainer as Container, MDBRow as Row } from 'mdbreact'
-//import axios from "axios"
-import { Formik, Form } from "formik"
-import Stepper from "./stepper"
 import ButtonsStepper from "./buttonsStepper"
-import {FormInputs, FormContainer}  from "./form"
-
-
+import { FormContainer, FormInputs } from "./form"
+import Stepper from "./stepper"
+import Header from "./header"
 
 const Test = () => {
     const [step, setStep] = useState(0)
     const preguntas = [
-        "¿Cual es el Peso Ideal al que quieres llegar?",
-        "¿Cual es tu altura y peso?",
-        "¿Cual es tu Sexo?",
-        "¿Cual es tu edad?",
-        "¿Sufre de alguna de estas patologias?",
-        "¿Mi Ritmo de Vida es:",
-        "¿Yo Como...",
-        "¿Mi Estilo de Vida es..",
-        "¿Salgo a Comer Fuera...",
-        "¿El tiempo que tengo para cocinar es...",
-        "¿Lo que mas me gusta comer es...",
-        "¿Suelo beber con las comidas...",
-        "¿Yo soy de...",
-        "¿Mi vida diaria es...",
-        "¿Mi actividad fisica es...",
-        "¿Objetivos",
-        "¿La ultima vez que intente adelgazar fue...",
-        "¿Me gustaria...",
-        "Ingresa tu correo electrónico para que te podamos enviar un informe completo:"
+        <p className="font-weight-bold">¿Cual es el <span className="text-line">peso ideal</span> al que quieres llegar?</p>,
+        <p className="font-weight-bold">¿Cual es tu altura y peso?</p>,
+        <p className="font-weight-bold">¿Cual es tu sexo?</p>,
+        <p className="font-weight-bold">¿Cual es tu edad?</p>,
+        <p className="font-weight-bold">¿Sufre de alguna de estas patologias?</p>,
+        <p className="font-weight-bold">Mi Ritmo de Vida es:</p>,
+        <p className="font-weight-bold">Yo como...</p>,
+        <p className="font-weight-bold">Mi estilo de vida es..</p>,
+        <p className="font-weight-bold">Salgo a Comer Fuera...</p>,
+        <p className="font-weight-bold">El tiempo que tengo para cocinar es...</p>,
+        <p className="font-weight-bold">Lo que mas me gusta comer es...</p>,
+        <p className="font-weight-bold">Suelo beber con las comidas...</p>,
+        <p className="font-weight-bold">Yo soy de...</p>,
+        <p className="font-weight-bold">Mi vida diaria es...</p>,
+        <p className="font-weight-bold">Mi actividad fisica es...</p>,
+        <p className="font-weight-bold text-line">Objetivos</p>,
+        <p className="font-weight-bold">La ultima vez que intente adelgazar fue...</p>,
+        <p className="font-weight-bold">Me gustaria...</p>,
+        <p className="font-weight-bold">Ingresa tu correo electrónico para que te podamos enviar un informe completo:</p>
 
     ] 
     const fields = 
@@ -46,11 +45,8 @@ const Test = () => {
 
     return(
         <>
-            <div style={{ paddingTop:"10px", paddingLeft:"5px", paddingRight:"5px" }}>
-                 <Stepper step={ step }/>
-            </div> 
-
-            <Container>
+            <Header color="purple-gradient" dark/>
+            <Container style={{ height:"500px" }}>
                 <Formik 
                     initialValues={{
                         pesoIdeal:"",
@@ -93,7 +89,7 @@ const Test = () => {
                         email:"",
                     }}>
                     <Form>
-                        <FormContainer title={ preguntas[step] }>
+                        <FormContainer title={ (preguntas[step]) }>
 
                             { step == 0 && <FormInputs type="number" name="pesoIdeal" id="pesoIdeal" append="kg" />}
                             { step == 1 && <FormInputs type="number" name="altura" id="altura" append="cm" /> }
@@ -105,7 +101,7 @@ const Test = () => {
 
                             )} 
 
-                            {  step == 3 && ["18-24", "25-34", "35-44", "45-54", "55 o mas"].map((label, key)=> 
+                            {  step == 3 && ["18-24", "25-34", "35-44", "45-54", "55 o mas"].map((label, key)=>
                                 <FormInputs label={ label } key={ key } type="radio" value={ label } name="edad" id={ `edad${key}` }/> 
                             )} 
 
@@ -306,9 +302,17 @@ const Test = () => {
                                     />
                             }
                                 </FormContainer>
-                        <Row center>
-                            <ButtonsStepper updateStep={ updateStep } step={ step }/>
-                        </Row>
+                                
+                        <footer className="fixed-bottom"> 
+                            <Footer color="white"> 
+                                <Row center>
+                                    <ButtonsStepper updateStep={ updateStep } step={ step }/>
+                                </Row>
+                                <div style={{ paddingTop:"10px", paddingLeft:"5px", paddingRight:"5px", paddingBottom:"10px" }}>
+                                    <Stepper step={ step }/>
+                                </div>
+                            </Footer>
+                        </footer>  
                     </Form>
                 </Formik>
             </Container>

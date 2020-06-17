@@ -6,12 +6,12 @@ import Logo from "../components/logo"
 
 
 
-const Header = () => {
+const Header = (props) => {
   const [menu, setMenu] = useState(false)
   
   return(
     <header style={{height: "5% !important"}}>
-        <MDBNavbar color="grey lighten-3" light className="ajuste_nav">
+        <MDBNavbar {...props} className="ajuste_nav">
             <MDBNavbarBrand>
               <Link to="/">
                 <Logo/>
