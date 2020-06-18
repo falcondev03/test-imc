@@ -1,13 +1,13 @@
 import React, { Fragment } from "react"
 import { MDBInputGroup, MDBRow as Row, MDBCol as Col, MDBInput as Input  } from "mdbreact"
 import { useField } from "formik"
+import InputRadio from "./inputs/InputRadio"
+import InputCheckbox from "./inputs/inputCheckbox"
 
 export const FormInputs = ({ label, ...props }) => {
     const [field, meta] = useField(props)
-    const [fieldCheck, metaCheck] = useField({ ...props, type:'checkbox' })
-    const [fieldRadio, metaRadio] = useField({ ...props, type: 'radio' })
     const [fieldText, metaText] = useField(props)
-    
+
     return (
         <Fragment>
                     {props.type === "number" &&
@@ -21,33 +21,16 @@ export const FormInputs = ({ label, ...props }) => {
                     
                     {props.type === "radio" &&
                     <Row center>
-                         <Col size="12">
-                           <Row end>
-                                <Col size="8" sm="7" md="7" lg="7" xl="7">
-                                    <div className="form-check">
-                                        <input id={ props.id } className="form-check-input" { ...fieldRadio } { ...props }/>
-                                        <label className="form-check-label" htmlFor={ props.id }>
-                                            { label }
-                                        </label>
-                                    </div>
-                                </Col>
-                           </Row> 
+                         <Col size="8" sm="8" md="7" lg="6" xl="6" className="offset-1 offset-sm-3 offset-md-3 offset-lg-3 offset-xl-3">
+                            <InputRadio {...props} label={ label } />
                         </Col>
                     </Row> 
                     }
 
                     {props.type === "checkbox" && 
                         <Row center>
-                         <Col size="12">
-                            <Row end>
-                                <Col size="9" sm="8" md="8" lg="7" xl="7">
-                                    <div className="form-check">
-                                        <input id={ props.id } className="form-check-input" { ...fieldCheck } { ...props } />
-                                        <label className="form-check-label" htmlFor={  props.id }>{ label }</label>
-
-                                    </div>
-                                </Col>
-                            </Row> 
+                         <Col size="8" sm="8" md="7" lg="6" xl="6" className="offset-1 offset-sm-3 offset-md-3 offset-lg-3 offset-xl-2">
+                            <InputCheckbox {...props} label={ label } />
                         </Col>
                     </Row>
                     }

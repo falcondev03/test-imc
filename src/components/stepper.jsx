@@ -1,7 +1,6 @@
 import React, { Fragment } from "react"
 import { MDBProgress } from "mdbreact"
 
-
 const Stepper = ({ step }) => {
 
     return(

@@ -33,7 +33,7 @@ const Test = () => {
     ] 
     const fields = 
         [
-            ["diabetes","tensionArterial","problemasCardiacos","problemasEndocrinos","problemasRenales","problemasHormonales"]
+            ["diabetes","tensionArterial","problemasCardiacos","problemasEndocrinos","problemasRenales","problemasHormonales", "ninguna"]
         ]
     const updateStep = stepper => {
         setStep(stepper)
@@ -60,7 +60,8 @@ const Test = () => {
                             problemasCardiacos:false,
                             problemasEndocrinos:false,
                             problemasRenales:false,
-                            problemasHormonales:false
+                            problemasHormonales:false,
+                            ninguna:false
                         },
                         ritmoVida:"",
                         dieta:"",
@@ -96,13 +97,16 @@ const Test = () => {
                             { step == 1 && <FormInputs type="number" name="peso" id="peso" append="kg"/> } 
 
                             {  step == 2 && ["masculino", "femenino"].map((label, key) =>
-
-                                <FormInputs key={ key } label={ label } type="radio" value={ label } name="sexo" id={ `sexo${key}` }/>
+                                <div className="alineacion">
+                                    <FormInputs key={ key } label={ label } type="radio" value={ label } name="sexo" id={ `sexo${key}` }/>
+                                </div>
 
                             )} 
 
                             {  step == 3 && ["18-24", "25-34", "35-44", "45-54", "55 o mas"].map((label, key)=>
-                                <FormInputs label={ label } key={ key } type="radio" value={ label } name="edad" id={ `edad${key}` }/> 
+                                <div className="alineacion">
+                                    <FormInputs label={ label } key={ key } type="radio" value={ label } name="edad" id={ `edad${key}` }/> 
+                                </div>
                             )} 
 
                             {  step == 4 && 
@@ -111,7 +115,8 @@ const Test = () => {
                                 "Problemas cardiacos",
                                 "Problemas endocrinos",
                                 "Problemas renales",
-                                "Problemas hormonales"]
+                                "Problemas hormonales",
+                                "No sufro ninguna"]
                                 .map((label, key)=> 
                                     <FormInputs
                                         key={ key }
