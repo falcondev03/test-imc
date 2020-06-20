@@ -8,7 +8,7 @@ import VideoIndex from "../components/video"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Inico" />
       <MDBBox tag="div" pb="5" pt="5" display="flex" flex="column" className="text-center" justifyContent="center" style={{backgroundColor:"#f5f5f5"}}>
         <h2 className="h1-responsive w-100">
           Todo Logro pasa por la Decision de Intentarlo

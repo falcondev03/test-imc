@@ -21,7 +21,7 @@ const Header = (props) => {
             <MDBCollapse id="navbarCollapse3" isOpen={menu} navbar>
               <MDBNavbarNav left>
                 <MDBNavItem>
-                  <Link to="/" className="nav-link">Home</Link>
+                  <Link to="/" className="nav-link">Inicio</Link>
                 </MDBNavItem>
                 <MDBNavItem>
                   <Link to="/quienes-somos" className="nav-link">Quienes Somos</Link>
