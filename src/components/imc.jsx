@@ -1,12 +1,14 @@
 // import axios from "axios"
 import { Form, Formik } from "formik"
-import { MDBContainer as Container, MDBRow as Row, MDBFooter as Footer } from 'mdbreact'
+import { MDBContainer as Container, MDBRow as Row, MDBFooter as Footer, MDBCol as Col } from 'mdbreact'
 import React, { useState } from 'react'
 import ButtonsStepper from "./buttonsStepper"
 import { FormContainer, FormInputs } from "./form"
 import Stepper from "./stepper"
 import Header from "./header"
-
+import InputRadio from "./inputs/InputRadio"
+import { } from  "./inputs/inputCheckbox"
+import InputCheckbox from "./inputs/inputCheckbox"
 const Test = () => {
     const [step, setStep] = useState(0)
     const preguntas = [
@@ -97,16 +99,24 @@ const Test = () => {
                             { step == 1 && <FormInputs type="number" name="peso" id="peso" append="kg"/> } 
 
                             {  step == 2 && ["masculino", "femenino"].map((label, key) =>
-                                <div className="alineacion">
-                                    <FormInputs key={ key } label={ label } type="radio" value={ label } name="sexo" id={ `sexo${key}` }/>
-                                </div>
+                                <Row center>
+                                  <Col size="5" sm="3" md="2" lg="2" xl="2" className="pl-lg-4 pl-xl-5">
+                                    <div className="alineacion">
+                                      <InputRadio key={ key } label={ label } type="radio" value={ label } name="sexo" id={ `sexo${key}` }/>
+                                    </div>
+                                  </Col>
+                                </Row>
 
                             )} 
 
                             {  step == 3 && ["18-24", "25-34", "35-44", "45-54", "55 o mas"].map((label, key)=>
-                                <div className="alineacion">
-                                    <FormInputs label={ label } key={ key } type="radio" value={ label } name="edad" id={ `edad${key}` }/> 
-                                </div>
+                              <Row center>
+                                  <Col size="5" sm="3" md="2" lg="2" xl="2" className="pl-lg-5 pl-xl-5">
+                                      <div className="alineacion">
+                                          <InputCheckbox label={ label } key={ key } type="radio" value={ label } name="edad" id={ `edad${key}` }/>
+                                      </div>
+                                  </Col>
+                              </Row>
                             )} 
 
                             {  step == 4 && 
@@ -117,14 +127,20 @@ const Test = () => {
                                 "Problemas renales",
                                 "Problemas hormonales",
                                 "No sufro ninguna"]
-                                .map((label, key)=> 
-                                    <FormInputs
-                                        key={ key }
-                                        label={ label }
-                                        type="checkbox"
-                                        name={ `patologias.${fields[0][key]}` }
-                                        id={`patologias${key}`}
-                                    />
+                                .map((label, key)=>
+                                  <Row end>
+                                    <Col size="10" sm="8" md="8" lg="8" xl="8" className="pl-md-5 pl-lg-5 pl-xl-5">
+                                      <div className="alineacion pl-lg-4 pl-xl-5">
+                                        <InputCheckbox
+                                            key={ key }
+                                            label={ label }
+                                            type="checkbox"
+                                            name={ `patologias.${fields[0][key]}` }
+                                            id={`patologias${key}`}
+                                        />
+                                      </div>
+                                    </Col>
+                                  </Row>
                             )}
 
                             {  step == 5 && 
