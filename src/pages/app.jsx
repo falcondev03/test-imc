@@ -6,7 +6,7 @@ const App = () => {
     return(
         <>
             <Router>
-                <Imc path="/app/"/>
+                <Imc path="/app/" />
             </Router>
         </>
     )

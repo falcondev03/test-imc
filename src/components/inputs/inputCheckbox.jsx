@@ -1,6 +1,7 @@
 import React from 'react'
 import { useField } from "formik"
-import InputRadio from './InputRadio'
+import { MDBAlert } from 'mdbreact'
+// import InputRadio from './InputRadio'
 
 const InputCheckbox = props => {
     const [fieldCheck, metaCheck] = useField({ ...props, type:'checkbox' })
@@ -9,7 +10,9 @@ const InputCheckbox = props => {
         <>
             <div className="form-check">
                 <input id={ props.id } className="form-check-input" { ...fieldCheck } { ...props } />
-                <label className="form-check-label" htmlFor={  props.id }>{ props.label }</label>
+                <label className="form-check-label" htmlFor={  props.id }>
+                    { props.label }
+                </label>
             </div>
         </>
     )
