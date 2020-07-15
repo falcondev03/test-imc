@@ -14,7 +14,7 @@ const ButtonsStepper = ({ updateStep, step }) => {
     return (
         <Fragment>
             { step != 0 && <MDBBtn onClick={ handlerButtonBack } outline className="rounded-pill">Atras</MDBBtn>}
-            <MDBBtn onClick={ handlerButtonNext } className="rounded-pill" gradient="purple">Adelante</MDBBtn>
+            <MDBBtn type="submit" className="rounded-pill" gradient="purple">Adelante</MDBBtn>
         </Fragment>
     )
 

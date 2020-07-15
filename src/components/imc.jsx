@@ -13,7 +13,9 @@ import Chart from "./chart"
 
 const Test = () => {
     const [step, setStep] = useState(0)
-    // const [imcResult, setImcResult] = useState(0)
+    const [imcResult, setImcResult] = useState(0)
+    const [pesoChart, setPesoChart] = useState(0)
+    const [pesoIdealChart, setPesoIdealChart] = useState(0)
     
     const preguntas = [
         <p className="font-weight-bold">¿Cual es el <span className="text-line">peso ideal</span> al que quieres llegar?</p>,
@@ -123,6 +125,13 @@ const Test = () => {
                         email:"",
                     }}
                     validationSchema={ validateTest }
+                    onSubmit={values => {
+                        if(step !== 19) return updateStep(step + 1)
+                        if(step == 19){
+                            setPesoChart(values.peso)
+                            setPesoIdealChart(values.pesoIdeal)
+                        }
+                    }}
                     >
                     <Form>
                         <FormContainer title={ (preguntas[step]) }>
@@ -358,8 +367,13 @@ const Test = () => {
                                     />
                             }
 
-                            {/* {step === 19 &&
-                            } */}
+                            {step === 19 &&
+                                <Chart
+                                    imc={imcResult}
+                                    peso={ pesoChart }
+                                    pesoIdeal={ pesoIdealChart }
+                                />
+                            }
                             </FormContainer>
                                 
                         <footer className="fixed-bottom"> 
