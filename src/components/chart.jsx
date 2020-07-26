@@ -1,12 +1,14 @@
 import React from 'react';
 import { VictoryChart, VictoryStack, VictoryGroup, VictoryArea, VictoryPortal, VictoryScatter } from 'victory'
+import Mensaje from './results/mensaje'
  
 const Chart = ({imc, peso, pesoIdeal}) => {
     
     return(
     <>
-        <h3>Resultado de Test:</h3>
+        <h5 className="mt-3 text-center">Nuestro Programa de Pérdida de Peso se basa en la Alimentación Consciente.</h5>
         <p>{ imc }</p>
+        <Mensaje imc={ imc } />
         <VictoryChart scale={{ x: "time" }} width={400} height={400}>
           <VictoryStack colorScale="warm">
             <VictoryGroup
